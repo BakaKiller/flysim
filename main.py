@@ -10,7 +10,7 @@ fly = pyglet.sprite.Sprite(img, random.randint(0, 1280), random.randint(0, 720))
 speed_x = random.randint(-5, 5)
 speed_y = random.randint(-5, 5)
 fly.scale = 0.03
-fly.rotation = math.atan2(speed_y, speed_x)/math.pi*180
+fly.rotation = math.degrees(math.atan2(speed_x, speed_y))
 pyglet.gl.glClearColor(1,1,1,1)
 
 @window.event
@@ -21,7 +21,7 @@ def on_draw():
 
 def move(dt, *args, **kwargs):
     global speed_x, speed_y
-    fly.rotation = math.atan2(speed_y, speed_x)/math.pi*180
+    fly.rotation = math.degrees(math.atan2(speed_x, speed_y))
     fly.x += speed_x
     fly.y += speed_y
     x, y = fly.position
