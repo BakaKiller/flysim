@@ -86,10 +86,7 @@ class Fly():
 
 window = pyglet.window.Window(1280, 720, "Flysim", True)
 
-i = 0
-while i < nbflies:
-    flies.append(Fly())
-    i += 1
+flies = [Fly() for i in range(nbflies)]
 
 mouse_x = None
 mouse_y = None
